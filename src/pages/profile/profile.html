@@ -1,0 +1,20 @@
+<toolbar [title_page]='title_page' 
+        [loading]='loading.loading_page' 
+        [notificationsCount]='notificationsCount'></toolbar>
+
+
+<ion-content class="theme-{{ app_var }}">
+  <div class="subcontent" style="margin-top: 150px;">
+	<ion-card class="gardient-background card-med-angle">
+		<ion-card-content>
+		  <h2>{{ profile.name }}</h2>
+		  <p><strong>Email:</strong> {{ profile.email }}</p>
+		  <p><strong>Dirección:</strong> Calacoto, Av. Ballivián Edificio Rooser Sur 7A</p>
+		  <p><strong>Teléfono:</strong> 70554450</p>
+		  <p><strong>Altura:</strong> 1.80 mts</p>
+		  <p><strong>Peso:</strong> 70 kg</p>
+    	  <button class="submit-btn" color='secondary' ion-button full type="submit">Editar Perfil</button>
+		</ion-card-content>
+	</ion-card>
+  </div>
+</ion-content>

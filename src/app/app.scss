@@ -1,0 +1,87 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+
+ion-app.md { font-family: 'josefin', sans; }
+.clear { clear: both; height: 1px; line-height: 1px; }
+.card-md { margin-bottom: 20px; }
+.toolbar-background-md { color: #fff;
+    background: map-get($colors, primary); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(left, map-get($colors, primary) , map-get($colors, light)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, map-get($colors, primary), map-get($colors, light)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, map-get($colors, primary), map-get($colors, light)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, map-get($colors, primary) , map-get($colors, light)); /* Standard syntax */
+}
+.toolbar-title-md, .toolbar-title-md, .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default { color: #fff; }
+ion-spinner { color: #fff !important; }
+.logo {
+	img { max-width: 60%; margin: auto; }
+}
+// Card
+.card-top-angle { margin-top: -20px;
+	-webkit-clip-path: polygon(0 7%, 100% 0, 100% 100%, 0 100%);
+	clip-path: polygon(0 7%, 100% 0, 100% 100%, 0 100%);
+}
+.label-md { margin: 0; color: map-get($colors, primary); }
+.padding-top-1 { padding-top: 1rem; }
+.center { text-align: center; }
+ion-menu .input-wrapper { border-bottom: 1px dashed #ddd; }
+.theme-Spazio{ background: #fff url('../assets/icon/bg.png') top center no-repeat; background-size: 100%;
+	.subcontent { background: rgba(255,255,255,0.7); width: 90%; padding: 10px; margin: auto; margin-top: 70px; }
+	.subcontent-2 { width: 95%; margin: auto; margin-top: 70px; }
+	.gardient-background {
+	    background: map-get($colors, primary); /* For browsers that do not support gradients */
+	    background: -webkit-linear-gradient(left, map-get($colors, primary) , map-get($colors, light)); /* For Safari 5.1 to 6.0 */
+	    background: -o-linear-gradient(right, map-get($colors, primary), map-get($colors, light)); /* For Opera 11.1 to 12.0 */
+	    background: -moz-linear-gradient(right, map-get($colors, primary), map-get($colors, light)); /* For Firefox 3.6 to 15 */
+	    background: linear-gradient(to right, map-get($colors, primary) , map-get($colors, light)); /* Standard syntax */
+	}
+	ion-label { white-space: normal; }
+	.list-md .item-block .item-inner { border: none; }
+	.card-big-angle { 
+		-webkit-clip-path: polygon(0 15%, 100% 0, 100% 90%, 0 100%);
+		clip-path: polygon(0 15%, 100% 0, 100% 90%, 0 100%);
+	}
+	.card-med-angle { 
+		-webkit-clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
+		clip-path: polygon(0 6%, 100% 0, 100% 94%, 0 100%);
+	}
+	.card-small-angle { 
+		-webkit-clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
+		clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
+	}
+	.card-content-md { padding-top: 20px;
+		h3 { margin-top: 10px; font-style: italic; font-size: 1.2rem; }
+		p { line-height: 2.2rem; }
+		h3, p, h2 { color: #fff; }
+	}
+	ion-list-header.list-header-md { color: map-get($colors, secondary); font-size: 20px; margin-bottom: 0; text-align: center; }
+}
+.theme-Spa{ background: #fff url('../assets/icon/bg.jpg') top center no-repeat; background-size: cover;
+	.subcontent { width: 90%; padding: 10px; margin: auto; margin-top: 70px; }
+	.subcontent-2 { width: 90%; padding: 10px; margin: auto; margin-top: 70px; }
+	.page-home .subcontent { background: #fff; }
+	.card-md { margin: 0; width: 100%; margin-bottom: 20px; }
+
+	ion-label { white-space: normal; }
+	.list-md .item-block .item-inner { border: none; }
+	.card-content-md { padding-top: 20px; background: white;
+		h3 { margin-top: 10px; font-style: italic; font-size: 1.2rem; }
+		p { line-height: 2.2rem; }
+	}
+	ion-list-header.list-header-md { color: map-get($colors, secondary); font-size: 20px; margin-bottom: 0; text-align: center; }
+}
