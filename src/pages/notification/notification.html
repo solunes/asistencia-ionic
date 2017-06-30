@@ -1,8 +1,6 @@
-<toolbar [title_page]='title_page' 
-        [loading]='loading.loading_page' 
-        [notificationsCount]='notificationsCount'></toolbar>
+<toolbar [title_page]='title_page'></toolbar>
 
-<ion-content padding class="theme-{{ app_var }}">
+<ion-content padding>
   <div class="subcontent">
 	<ion-list>
 	    <ion-item [@itemState]="in" *ngFor='let notifis of notifications' (click)="onClickItem(notifis)" [style.background-color]="notifis.checked_date ? 'white': '#EEEEEE'">

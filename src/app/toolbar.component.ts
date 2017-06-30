@@ -4,13 +4,15 @@ import { Storage } from '@ionic/storage'
 import { NavController} from 'ionic-angular'
 
 import { NotificationPage } from '../pages/notification/notification'
+import { LoginPage } from '../pages/login/login'
+
 import { AppSettings } from '../providers/app-settings'
 
 @Component({
   selector: 'toolbar',
   template: `
-  <ion-header class="header header-md">
-      <ion-navbar class="toolbar toolbar-md statusbar-padding">
+  <ion-header>
+      <ion-navbar>
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
@@ -20,6 +22,7 @@ import { AppSettings } from '../providers/app-settings'
 
         <ion-buttons end >
           <button ion-button *ngIf="loading"><ion-spinner icon="android"></ion-spinner></button>
+          <button ion-button *ngIf="logged" (click)="logout()"><ion-icon name="log-out"></ion-icon></button>
         </ion-buttons>
       </ion-navbar>
   </ion-header>
@@ -28,6 +31,7 @@ import { AppSettings } from '../providers/app-settings'
 export class ToolbarComponent{
   @Input() title_page: string = 'Toolbar'
   @Input() loading: boolean = false
+  @Input() logged: boolean = false
 
   constructor(private navCtrl: NavController, 
       private auth: AuthService, 
@@ -37,5 +41,14 @@ export class ToolbarComponent{
 
   public showNotifi(){
     this.navCtrl.push(NotificationPage)
+  }
+
+  logout(){
+    this.auth.logout().subscribe(succ => {
+      this.storage.remove(AuthService.login_key)
+      this.storage.remove(AuthService.token_key)
+      this.storage.remove(AuthService.expiration_date_key)
+      this.navCtrl.setRoot(LoginPage)
+    })
   }
 }

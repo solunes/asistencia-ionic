@@ -25,6 +25,7 @@
     "@ionic-native/background-mode": "^3.12.1",
     "@ionic-native/core": "^3.6.0",
     "@ionic-native/geolocation": "^3.12.1",
+    "@ionic-native/ibeacon": "^3.12.1",
     "@ionic/cloud-angular": "^0.12.0",
     "@ionic/storage": "^2.0.1",
     "intl": "^1.2.5",

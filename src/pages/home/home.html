@@ -1,16 +1,21 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-        Home
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-<ion-content class="theme">
-  <div class="subcontent">
-    <h2>{{location.lat}}</h2>
-    <h2>{{location.lng}}</h2>
-    <h3>{{location.isForeground}}</h3>
-    <h3>{{backgroundMode.isEnabled()}}</h3>
-    <h3>{{backgroundMode.isActive()}}</h3>
+<toolbar [title_page]='title_page' 
+         [logged]='logged'
+         [loading]='loading.loading_page'></toolbar>
+
+<ion-content padding class="margin_top">
+  <button ion-button full *ngIf="!status" (click)="ingresar()">Ingresar</button>
+  <button ion-button full color="danger" *ngIf="status" (click)="salida()">Salir</button>
+  <div *ngFor="let item of schedules">
+    <h2 *ngIf="item.schedule.length > 0">{{ item.date }}</h2>
+    <div *ngFor="let schedule of item.schedule">
+      <div class="inline">
+        <p>{{schedule.in}}</p>
+        <p>{{schedule.in_status}}</p>
+      </div>
+      <div class="inline">
+        <p>{{schedule.out}}</p>
+        <p>{{schedule.out_status}}</p>
+      </div>
+    </div>
   </div>
 </ion-content>

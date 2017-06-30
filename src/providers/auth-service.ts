@@ -18,18 +18,19 @@ export class User {
 export class AuthService {
   static login_key: string = 'login'
   static token_key: string = 'token'
+  static user_id_key: string = 'user_id'
   static expiration_date_key: string = 'expirationDate'
   timeout_page:number = 10000
 
   constructor(private http: Http) {}
 
   public login(credentials) {
-    if (credentials.user === null || credentials.email === null) {
+    if (credentials.email === null || credentials.email === null) {
       return Observable.throw("please insert credentials");
     } else {
       let body = new FormData();
-      body.append('name', credentials.user);
       body.append('email', credentials.email);
+      body.append('password', credentials.password);
       return this.http.post(AppSettings.api_url + '-auth/authenticate', body)
           .timeout(this.timeout_page).map(res => res.json());
     }

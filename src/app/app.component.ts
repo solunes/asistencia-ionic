@@ -4,8 +4,11 @@ import { BackgroundMode } from '@ionic-native/background-mode';
 import { Platform, MenuController, AlertController, Nav } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 import { AppSettings } from '../providers/app-settings';
+import { AuthService } from '../providers/auth-service';
 import { LocationTracker } from '../providers/location-tracker';
+
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
 
 @Component({
   templateUrl: 'app.html'
@@ -29,12 +32,11 @@ export class MyApp {
       if (this.platform.is('cordova')) {
         Splashscreen.hide();
         StatusBar.styleDefault();
+        this.backgroundMode.configure({silent:true})
         this.backgroundMode.enable()
         this.backgroundMode.overrideBackButton()
         this.platform.registerBackButtonAction(() => {
           console.log('BackButtonAction')
-          location.backgroundTracking()
-          this.platform.exitApp()
         },10)
       }
       this.initApp()
@@ -42,6 +44,12 @@ export class MyApp {
   }
 
   public initApp(){
-    this.rootPage = HomePage;
+    this.storage.get(AuthService.login_key).then(value => {
+      if (value) {
+        this.rootPage = HomePage
+      } else {
+        this.rootPage = LoginPage
+      }
+    })
   }
 }

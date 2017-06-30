@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler, LOCALE_ID } from '@angular/core';
 import { IonicStorageModule } from '@ionic/storage';
 import { Geolocation } from '@ionic-native/geolocation';
 import { BackgroundGeolocation } from '@ionic-native/background-geolocation';
+import { IBeacon } from '@ionic-native/ibeacon';
 import { BackgroundMode } from '@ionic-native/background-mode';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
@@ -19,6 +20,7 @@ import { AuthService } from '../providers/auth-service';
 import { HttpClient } from '../providers/http-client';
 import { LoadingClient } from '../providers/loading-client';
 import { LocationTracker } from '../providers/location-tracker';
+import { BeaconProvider } from '../providers/beacon-provider';
 
 import { OrderByPipe } from '../pipes/OrderBy';
 import { Currency } from '../pipes/currency';
@@ -56,6 +58,8 @@ import { Currency } from '../pipes/currency';
     BackgroundMode,
     BackgroundGeolocation,
     LocationTracker,
+    IBeacon,
+    BeaconProvider,
     LoadingClient, 
     {provide: LOCALE_ID, useValue: 'es-ES'},
     {provide: ErrorHandler, useClass: IonicErrorHandler}

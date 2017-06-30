@@ -1,16 +1,21 @@
 page-home {
-	.theme-Spa {
-		.subcontent { background: #fff; margin-top: 30px; padding-left: 0; padding-right: 0; }
-	}
-	.theme-Spazio {
-		.subcontent { margin-top: 30px; padding-left: 0; padding-right: 0; }
-	}
     .label-md { text-align: center; }
     .subcontent {
-    	ion-icon { font-size: 2.2em; display: block; margin-bottom: 0.1em; }
-    	.item-md.item-block .item-inner { padding-bottom: 8px; }
-    	.grid { margin-bottom: 10px; }
+        ion-icon { 
+            font-size: 2.2em; 
+            display: block; 
+            margin-bottom: 0.1em; }
+    	.item-md.item-block .item-inner { 
+            padding-bottom: 8px; }
+    	.grid { 
+            margin-bottom: 10px; }
     }
-    .badge-md { position: absolute; left: 60%; top: 0; border-radius: 50%; margin: 0 !important; background: #e23333; }
-    .franquiciate { margin-bottom: 10px; }
+
+    .margin_top {
+        margin-top: 56px;
+    }
+    .inline{
+        padding-right: 10px;
+        display: inline-block;
+    }
 }

@@ -1,13 +1,19 @@
-<toolbar [title_page]='title_page' 
-        [loading]='logged' 
-        [notificationsCount]='notificationsCount'
-        [is_login]='logged'></toolbar>
+<toolbar [title_page]='title_page'></toolbar>
 
-<ion-content class="login-content theme-{{ app_var }}">
-  <div class="subcontent">
-    <h2>Iniciar Sesión</h2>
-  </div>
-  <div class="subcontent register-content">
-    <h2>Regístrate</h2>
+<ion-content padding>
+  <div class="subcontent" style="margin-top: 100px;">
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" name="email" [(ngModel)]="loginCredentials.email" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" name="password" [(ngModel)]="loginCredentials.password" required></ion-input>
+      </ion-item>
+
+      <button class="submit-btn" ion-button full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+    </form>
   </div>
 </ion-content>
